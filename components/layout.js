@@ -6,24 +6,30 @@ import Link from 'next/link';
 
 const name = 'Керес Блог';
 export const siteTitle = 'Керес Блог';
+const siteUrl = 'https://keresm-blog.vercel.app';
+const defaultDescription = 'Blog of Keresm!';
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
+        <title>{siteTitle}</title>
+        <link rel="canonical" href={`${siteUrl}/`} />
         <link rel="icon" href="/logo.jpg" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle,
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="title" content={siteTitle} />
+        <meta name="description" content={defaultDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={siteTitle} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={defaultDescription} />
+        <meta property="og:image" content={`${siteUrl}/logo.jpg`} />
+        <meta property="og:image:alt" content={`${siteTitle} logo`} />
+        <meta property="og:url" content={`${siteUrl}/`} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={siteTitle} />
+        <meta name="twitter:description" content={defaultDescription} />
+        <meta name="twitter:image" content={`${siteUrl}/logo.jpg`} />
+        <meta name="twitter:url" content={`${siteUrl}/`} />
       </Head>
       <header className={styles.header}>
         {home ? (
