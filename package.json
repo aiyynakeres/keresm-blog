@@ -1,4 +1,5 @@
 {
+  "name": "keresm_blog",
   "private": true,
   "scripts": {
     "build": "next build",
