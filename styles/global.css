@@ -42,3 +42,7 @@ img {
   padding: 10px;
   border-radius: 5px;
 }
+
+img + p > em {
+  color: #9ca3af !important;
+}
